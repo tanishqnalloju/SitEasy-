@@ -1,0 +1,98 @@
+SIT EASY
+Teach For America
+ We tried creating a seating arrangement based on the class’ academic performance and physical disability requirements.
+ This project serves to help the teachers to provide better learning experience to students and to help all those that require help.
+
+We gave the priority of seating for disabled students. 
+We placed them in the front rows based on the teacher’s choice. 
+Students with temporary injuries were placed on the aisle seats for easier movement. 
+Students who could not see or hear properly were placed at the front. 
+Empty spots were reserved for students who could only move with the help of a wheelchair.
+
+The next priority was given for students with academic difficulties. 
+As students who are facing difficulty require more attention, they are placed directly close to the teacher. They are placed in the front rows as much as possible. 
+Students who could perform better than those with difficulties were placed towards the middle and then the end along with the high achievers of the class.
+
+Disabled students : front rows			
+Temporay injuries : aisle
+Hearing or vision impairment: front
+Wheelchair : front rows
+
+Academic difficulties: front as much as possible
+Average academic grade : middle
+High achievers : Back
+
+INPUT: 
+STDUENT_ID-DISABILITY-GPA[ARRAY] (or) using file to read the input and interpet the average grade by writing in a new file.
+Display the final output in a new file.
+Have a status showing capability.
+POINTS BASED SYSTEM
+DS	70
+TI	1
+HI/VI   50
+WC	90
+
+AD	15
+AVG	10
+HIGH	5
+
+Structure- 
+	Student:	stu[size]
+		float sub[s]
+		float average
+		char problem
+		long id
+		int intens
+Union- create a union to store for the disabilities to able to mange space effectively
+
+
+
+
+###SOLUTION 2
+Assign the problems with special numbers and special codes to identify the major problem
+
+Disablities:
+Disabled - D	-7
+Temporary- T	-11***special code
+Hearing/Vision- H/V-6
+Wheelchair- W	-8
+
+Academics:
+Difficulties- L (low)/B (below)-5
+Average- A(average)		-4
+High- H(high)			-3
+
+stu[size]: size=row*column+add. seats (or) -rem seats
+long class[row][column] : To store the ids of student to allocate him the specific seat
+when a stu meet specs long class[][]=stud.id
+
+Take aisle rows as inputs and store in the aisle[size3]
+check those row,columns and id id is present when allocating the seats to the students
+
+##algo
+1.first search for '11'
+2.put it into an array
+3.when sorting the whole stu structure array ,
+	check f row%aisle[]:
+		assign it to the temporary injuries.
+
+Eg:-
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+|-|-|-|-|-|
+6x6 stu matrix
+1,3,4,and 6 rows are aisles. Means 3x5 and 3x5 matrices are two sub matrices
+Front-6
+Second-6
+aisles-24
+Total-6x6-36
+
+check if aisle seats are less than the total temporary injuries??
+Total special seats=aisles(temp_inju)+front(D/W)+second(H/V)=total special needs students
+
+###idea 3
+#define menu main : To make the menu as the main function and start the execution from the 
+			menu function
